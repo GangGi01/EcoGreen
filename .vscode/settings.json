@@ -56,5 +56,5 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "EcoGreen1.sln"
+    "dotnet.defaultSolution": "EcoGreen.sln"
 }
