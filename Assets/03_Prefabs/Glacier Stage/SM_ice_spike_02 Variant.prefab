@@ -1,0 +1,59 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &4968176652570099215
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4873271590089582080, guid: 0ad533a754ec37f49bedc90340ab9090, type: 3}
+      propertyPath: m_Name
+      value: SM_ice_spike_02 Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 5254159377077288122, guid: 0ad533a754ec37f49bedc90340ab9090, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -26.87
+      objectReference: {fileID: 0}
+    - target: {fileID: 5254159377077288122, guid: 0ad533a754ec37f49bedc90340ab9090, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 5254159377077288122, guid: 0ad533a754ec37f49bedc90340ab9090, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -5.869999
+      objectReference: {fileID: 0}
+    - target: {fileID: 5254159377077288122, guid: 0ad533a754ec37f49bedc90340ab9090, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.3826839
+      objectReference: {fileID: 0}
+    - target: {fileID: 5254159377077288122, guid: 0ad533a754ec37f49bedc90340ab9090, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5254159377077288122, guid: 0ad533a754ec37f49bedc90340ab9090, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.9238794
+      objectReference: {fileID: 0}
+    - target: {fileID: 5254159377077288122, guid: 0ad533a754ec37f49bedc90340ab9090, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5254159377077288122, guid: 0ad533a754ec37f49bedc90340ab9090, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5254159377077288122, guid: 0ad533a754ec37f49bedc90340ab9090, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 135
+      objectReference: {fileID: 0}
+    - target: {fileID: 5254159377077288122, guid: 0ad533a754ec37f49bedc90340ab9090, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 0ad533a754ec37f49bedc90340ab9090, type: 3}
