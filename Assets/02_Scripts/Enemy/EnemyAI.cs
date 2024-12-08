@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -7,7 +8,9 @@ using Random = UnityEngine.Random;
 public class EnemyAI : MonoBehaviour
 {
     public GameObject buildingPrefab; // 건설할 건물 프리팹
-    public Transform[] buildLocations; // 건설 가능한 위치 배열
+    public GameObject buildPointsGroup;
+    
+    public List<Transform> buildingPoints = new List<Transform>(); // 건설 가능한 위치 배열
 
     private int resources = 0; // 현재 자원량
     private int maxResources = 10; // 최대 자원량
@@ -19,6 +22,11 @@ public class EnemyAI : MonoBehaviour
     {
         //자원 회복 코루틴 시작
         StartCoroutine(RegenerateResource());
+
+        foreach (Transform child in buildPointsGroup.transform)
+        {
+            buildingPoints.Add(child);
+        }
     }
 
     private void Update()
@@ -45,24 +53,20 @@ public class EnemyAI : MonoBehaviour
     
     private void BuildStructure()
     {
-        // 건설 가능한 위치 중 무작위로 선택
-        Transform buildLocation = new GameObject("TestLocation").transform;
-        buildLocation.position = Vector3.zero;
-
-        // 이미 해당 위치에 건물이 있는지 확인
-        Collider[] colliders = Physics.OverlapSphere(buildLocation.position, 1f);
-        foreach (Collider collider in colliders)
+        if (buildingPoints.Count > 0) // 자원이 충분하고 건설 위치가 남아있는 경우
         {
-            if (collider.CompareTag("ENEMYTOWER"))
-            {
-                Debug.Log("이미 건물이 있는 위치입니다. 건설을 건너뜁니다.");
-                return;
-            }
-        }
+            resources -= buildCost; // 자원 차감
 
-        // 건물 생성
-        resources -= buildCost;
-        Instantiate(buildingPrefab, buildLocation.position, Quaternion.identity);
-        Debug.Log($"건물이 {buildLocation.position} 위치에 건설되었습니다.");
+            // 랜덤으로 위치 선택
+            int randomIndex = Random.Range(0, buildingPoints.Count);
+            Transform buildPoint = buildingPoints[randomIndex];
+
+            // 선택된 위치에 건물 생성
+            Instantiate(buildingPrefab, buildPoint.position, Quaternion.identity);
+            Debug.Log($"건물이 {buildPoint.position}에 건설되었습니다.");
+
+            // 사용된 위치 제거
+            buildingPoints.RemoveAt(randomIndex);
+        }
     }
 }
