@@ -9149,7 +9149,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f87a31be4f9fc514dad079fb64d4c854, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthBar: {fileID: 842572619}
+  healthBar: {fileID: 7411842004211830438}
   healthIncrement: 0.5
   additionalIncreementPerObject: 0.1
 --- !u!4 &859142757
