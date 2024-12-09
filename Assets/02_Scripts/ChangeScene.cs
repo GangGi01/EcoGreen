@@ -12,14 +12,14 @@ public class ChangeScene : MonoBehaviour
 
         switch (nowScene.name)
         {
-            case "ForestStage":
-                SceneManager.LoadScene("FactoryStage");
+            case "01_ForestStage":
+                SceneManager.LoadScene("02_FactoryStage");
                 break;
-            case "FactoryStage":
-                SceneManager.LoadScene("SeaStage");
+            case "02_FactoryStage":
+                SceneManager.LoadScene("03_SeaStage");
                 break;
-            case "SeaStage":
-                SceneManager.LoadScene("MainStage");
+            case "03_SeaStage":
+                SceneManager.LoadScene("04_MainStage");
                 break;
 
 
