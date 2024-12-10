@@ -30,6 +30,11 @@ public class Light : MonoBehaviour
             // 색상도 어두워지도록 설정 (선택 사항)
             targetLight.color = Color.Lerp(Color.white, Color.black, elapsedTime / dimDuration);
         }
+        // 조명이 완전히 어두워진 경우 오브젝트 비활성화
+        if (elapsedTime >= dimDuration)
+        {
+            gameObject.SetActive(false);
+        }
     }
 }
 
