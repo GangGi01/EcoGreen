@@ -7,7 +7,8 @@ using Random = UnityEngine.Random;
 
 public class EnemyAI : MonoBehaviour
 {
-    public GameObject buildingPrefab; // 건설할 건물 프리팹
+    // 건설할 건물 프리팹
+    public List<GameObject> buildingPrefabs;
     public GameObject buildPointsGroup;
     
     public List<Transform> buildingPoints = new List<Transform>(); // 건설 가능한 위치 배열
@@ -60,9 +61,9 @@ public class EnemyAI : MonoBehaviour
             // 랜덤으로 위치 선택
             int randomIndex = Random.Range(0, buildingPoints.Count);
             Transform buildPoint = buildingPoints[randomIndex];
-
-            // 선택된 위치에 건물 생성
-            Instantiate(buildingPrefab, buildPoint.position, Quaternion.identity);
+            GameObject buildingPrefab = buildingPrefabs[Random.Range(0, buildingPrefabs.Count)];
+            GameObject newBuilding = Instantiate(buildingPrefab, buildPoint.position, Quaternion.identity); // 선택된 위치에 건물 생성
+            newBuilding.transform.localScale = new Vector3(0.05f, 0.05f, 0.05f);
             Debug.Log($"건물이 {buildPoint.position}에 건설되었습니다.");
 
             // 사용된 위치 제거
